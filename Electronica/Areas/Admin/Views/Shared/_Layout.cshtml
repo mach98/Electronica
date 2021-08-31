@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Administrator</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <link href="~/Content/jasny-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet">
+    <link href="~/Content/dashboard.css" rel="stylesheet">
+    <link href="~/Content/animations.css" rel="stylesheet">
+    <link href="~/Content/buttons.css" rel="stylesheet">
+    <link href="~/Content/variables.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .custom1 {
+            display: block;
+            cursor: pointer;
+        }
+
+        .off-canvas > .cstm-shade {
+            width: 0;
+            height: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: background 0.5s ease, width 0s ease 0.5s, height 0s ease 0.5s;
+        }
+
+        .off-canvas > input[type="checkbox"] {
+            display: none;
+        }
+
+            .off-canvas > input[type="checkbox"]:checked ~ .cstm-shade {
+                background: rgba(0, 0, 0, 0.75);
+                width: 100%;
+                height: 100%;
+                transition: background 0.5s ease;
+            }
+
+        .off-canvas > .cstm-shade > .cstm-navi {
+            background: white;
+            width: 300px;
+            height: 100%;
+            position: fixed;
+            right: -300px;
+            transition: right 0.5s ease;
+        }
+
+        .off-canvas > input[type="checkbox"]:checked ~ .cstm-shade > .cstm-navi {
+            right: 0;
+        }
+
+        .cstm-navi-content {
+            padding: 20px;
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    @Html.Partial("_Header")
+    <div style="padding-top: 20px; padding-left: 20px; padding-right: 20px">
+        <div class="col-md-12">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="off-canvas">
+        <input type="checkbox" id="off_canvas" />
+        <div class="cstm-shade">
+            <div class="cstm-navi">
+                <div class="cstm-navi-content">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation" class="active">
+                            @Html.ActionLink("Products", "Index", "Products")
+                        </li>
+                        
+                        @*<li role="presentation">
+                            @Html.ActionLink("Users", "Index", new { @controller = "Users" })
+                        </li>
+                        <li role="presentation">
+                            @Html.ActionLink("Roles", "Index", new { @controller = "Roles" })
+                        </li>*@
+                        <li role="presentation">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-user"></span>
+                                Profile
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-off"></span>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Footer")
+    <script type="text/javascript" src="~/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/bundle.js" charset="utf-8"></script>
+    <script type="text/javascript" src="~/Scripts/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/style.js"></script>
+    @RenderSection("JavaScript", required: false)
+</body>
+</html>
+
+
+
+

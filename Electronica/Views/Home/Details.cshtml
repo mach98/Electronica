@@ -1,0 +1,128 @@
+﻿@model Electronica.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="products">
+    <div class="container">
+        <div class="products-grids">
+            <div class="col-md-8 products-single">
+                <div class="col-md-5 grid-single">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li data-thumb="images/z1.jpg">
+                                <div class="thumb-image"> <img src="images/z1.jpg" data-imagezoom="true" class="img-responsive" alt="" /> </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- FlexSlider -->
+                    <script src="~/Scripts/imagezoom.js"></script>
+                    <script defer src="~/Scripts/jquery.flexslider.js"></script>
+                    <script>
+						// Can also be used with $(document).ready()
+						$(window).load(function() {
+						  $('.flexslider').flexslider({
+							animation: "slide",
+							controlNav: "thumbnails"
+						  });
+						});
+                    </script>
+
+                </div>
+                <div class="col-md-7 single-text">
+                    <div class="details-left-info simpleCart_shelfItem">
+                        <input type="hidden" id="@Model.ProductId" name="property_id" />
+                        <h3>@Model.ProductImage</h3>
+                        <p class="availability">Availability: <span class="color">In stock</span></p>
+                        <div class="price_single">
+                            <span class="reducedfrom">$ @Model.UnitPrice</span><a href="#">click for offer</a>
+                        </div>
+                        <h3>Length</h3>
+                        <ul class="size">
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">6</a></li>
+                        </ul>
+                        <div class="quantity_box">
+                            <span>Quantity:</span>
+                            <div class="product-qty">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <div class="single-but item_add">
+                            <input type="submit" value="add to cart" />
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- collapse -->
+            <div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Description
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            @Model.ProductDescription
+                        </div>
+                    </div>
+                </div>               
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                help
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            Help is on the way
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<!--//end-->
+<script type="text/javascript">
+							    $(window).load(function() {
+								    $(".flexiselDemo3").flexisel({
+								        visibleItems: 5,
+								        animationSpeed: 1000,
+								        autoPlay: true,
+								        autoPlaySpeed: 3000,
+								        pauseOnHover: true,
+								        enableResponsiveBreakpoints: true,
+								        responsiveBreakpoints: {
+								            portrait: {
+								                changePoint:480,
+								                visibleItems: 2
+								            },
+								            landscape: {
+								                changePoint:640,
+								                visibleItems: 3
+								            },
+								            tablet: {
+								                changePoint:768,
+								                visibleItems: 3
+								            }
+								        }
+								    });
+								});
+</script>

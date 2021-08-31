@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+@Html.Partial("_Header")
+<body>
+
+    <div class="top_bg" id="home">
+        <div class="container">
+            <div class="header_top">
+                <div class="top_right">
+                    <ul>
+                        <li><a href="#">help</a></li>
+                        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+
+                    </ul>
+                </div>
+                <div class="top_left">
+                    <h6><span></span> Call us : 032 2352 782</h6>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!--header-->
+    <div class="header_bg">
+        <div class="container">
+            <div class="header">
+                <div class="head-t">
+                    <div class="logo">
+                        <h1>@Html.ActionLink("Electronica", "Index", "Home")</h1>
+                    </div>
+                    <div class="header_right">
+                        <div class="cart box_1">
+                            <a href="checkout.html">
+                                <div class="total">
+                                    <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
+                                </div>
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </a>
+                            <p><a href="@Url.Action("MyOrder", "AddToCart")" class="simpleCart_empty">Empty Cart</a></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--start-header-menu-->
+                <ul class="megamenu skyblue">
+                    <li class="active grid">@Html.ActionLink("Home", "Index", "Home", new { @class = "color1" })</li>
+                    <li>
+                        <a class="color4" href="#">APPLIANCES</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Refrigerators</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Compact", "Compact", "Appliances")</li>
+                                            <li>@Html.ActionLink("Bottom Freezer", "BottomFreezer", "Appliances")</li>
+                                            <li>@Html.ActionLink("Top Freezer", "TopFreezer", "Appliances")</li>
+                                            <li>@Html.ActionLink("Side By Side", "SideBySide", "Appliances")</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Washers & Dryers</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Front Loader", "FrontLoader", "Appliances")</li>
+                                            <li>@Html.ActionLink("Top Loader", "TopLoader", "Appliances")</li>
+                                            <li>@Html.ActionLink("TWINWASH", "TwinWash", "Appliances")</li>
+                                            <li>@Html.ActionLink("Dryers", "Dryer", "Appliances")</li>
+                                            <li>@Html.ActionLink("Dish Washer", "DishWasher", "Appliances")</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Air Conditioners</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("ArtCool", "ArtCool", "Appliances")</li>
+                                            <li>@Html.ActionLink("Convertible AC", "ConvertibleAc", "Appliances")</li>
+                                            <li>@Html.ActionLink("Floor Standing AC", "FloorStandingAc", "Appliances")</li>
+                                            <li>@Html.ActionLink("Split AC", "SplitAc", "Appliances")</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Freezers</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Stand Freezer", "StandFreezer", "Appliances")</li>
+                                            <li>@Html.ActionLink("Chest Freezer", "ChestFreezer", "Appliances")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Gas Cooker</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="color5" href="#">TV/AUDIO/VIDEO</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>TVs</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("LED TV", "LedTv", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("Plasma TV", "PlasmaTv", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("3D TV", "ThreeDimensionTv", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("OLED TV", "OledTv", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("Smart TV", "SmartTv", "TvAudioVideo")</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>HOME AUDIO</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Sound Bars", "SoundBars", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("Home Theatres", "HomeTheatres", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("Hi-Fi System", "HiFiSystem", "TvAudioVideo")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>VIDEO</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Blu-Ray Players", "BluRayPlayer", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("DVD Players", "DvdPlayer", "TvAudioVideo")</li>
+                                            <li>@Html.ActionLink("Projectors", "Projectors", "TvAudioVideo")</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="color6" href="#">COMPUTER PRODUCTS</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>COMPUTERS</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Laptops", "Laptops", "ComputerProducts")</li>
+                                            <li>@Html.ActionLink("Monitors", "Monitors", "ComputerProducts")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Multimedia & Storage</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("External Hard Disk", "ExternalHardDisk", "ComputerProducts")</li>
+                                            <li>@Html.ActionLink("Flash Drive", "FlashDrive", "ComputerProducts")</li>
+                                            <li>@Html.ActionLink("Multimedia", "Multimedia", "ComputerProducts")</li>
+                                            <li>@Html.ActionLink("Optical Storage", "OpticalStorage", "ComputerProducts")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a class="color7" href="#">MOBILE</a>
+                        <div class="megapanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Cell Phones</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Phones", "Phones", "Mobile")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Tablets</h4>
+                                        <ul>
+                                            <li>@Html.ActionLink("Tablets", "Tablets", "Mobile")</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col2"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                                <div class="col1"></div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        @Html.ActionLink("VACUUM & AIR CLEANER", "Index", "VacuumAirCleaner")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Accessories", "Index", "Accessories")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+        <hr />
+        @Html.Partial("_Footer")
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap") 
+@RenderSection("scripts", required: false)
+    <script type="applijegleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+    <script></script>
+</body>
+</html>

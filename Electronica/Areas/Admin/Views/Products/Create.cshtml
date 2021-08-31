@@ -1,0 +1,92 @@
+﻿@model Electronica.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<div class="modal-content">
+    @using (Html.BeginForm("Create", "Products", FormMethod.Post, new
+    {
+        @class = "form-horizontal",
+        role = "form",
+        @id = "regForm"
+    }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">ADD NEW PRODUCT</h4>
+        </div>
+        <div class="modal-body">
+
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                <li role="presentation"><a href="#other" aria-controls="other" role="tab" data-toggle="tab">Others</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div style="padding-top: 20px"></div>
+                    <div class="form-group">                            
+                            @Html.LabelFor(m => m.ProductName, htmlAttributes: new { @class = "col-sm-3 control-label" })                            
+                            <div class="col-sm-8">
+                                @Html.EditorFor(m => m.ProductName, new { htmlAttributes = new { @class = "control-label", required = true } })
+                            </div>
+                        </div>
+                    <div class="form-group">                        
+                        @Html.LabelFor(m => m.SelectedProductType, htmlAttributes: new { @class = "col-sm-3 control-label" })                       
+                        <div class="col-sm-8">
+                            @Html.DropDownListFor(m => m.SelectedProductType, Model.dllProductType, "Please select...", new { @class = "form-control", required = true })
+                        </div>
+                    </div>
+                    <div class="form-group">                          
+                        @Html.LabelFor(m => m.SelectedProductCategory, htmlAttributes: new { @class = "col-sm-3 control-label" })     
+                        <div class="col-sm-8">
+                            @Html.DropDownListFor(m => m.SelectedProductCategory, Model.dllProductCategory, "Please Select...", new { @class = "form-control", required = true })
+                        </div>
+                        </div>
+                    </div>
+
+                <div role="tabpanel" class="tab-pane" id="other">
+                    <div class="form-group">                           
+                            @Html.LabelFor(m => m.UnitPrice, htmlAttributes: new { @class = "col-sm-3 control-label" })                           
+                            <div class="col-md-8">
+                                @Html.EditorFor(m => m.UnitPrice, new { htmlAttributes = new { @class = "control-label", required = true } })
+                            </div>
+                        </div>
+                    <div class="form-group">                            
+                            @Html.LabelFor(m => m.QuantityInStock, htmlAttributes: new { @class = "col-sm-3 control-label" })                           
+                            <div class="col-sm-8">
+                                @Html.EditorFor(m => m.QuantityInStock, new { htmlAttributes = new { @class = "control-label", required = true } })
+                            </div>
+                        </div>
+                    <div class="form-group">                           
+                        @Html.LabelFor(m => m.ProductDescription, htmlAttributes: new { @class = "col-sm-3 control-label" })                            
+                        <div class="col-sm-8">
+                            @Html.EditorFor(m => m.ProductDescription, new { htmlAttributes = new { @class = "control-label", required = true } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ProductImage, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                        <div class="col-sm-8">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                <div>
+                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span>
+                                    <span class="fileinput-exists">Change</span>
+                                    <input type="file" name="@Html.NameFor(m => m.ProductImage)"></span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                    </div>
+                </div>                
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+
+        </div>
+    }
+</div>
+

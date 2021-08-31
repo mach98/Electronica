@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "ConvertibleAc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ConvertibleAc</h2>
+<div class="products">
+    <div class="container">
+
+        <div class="products-grids">
+            <div class="col-md-8 products-grid-left">
+
+                <div class="products-grid-lft">
+                    @foreach (var product in Model)
+                    {
+                        <div class="products-grd">
+                            <div class="p-one simpleCart_shelfItem prd">
+                                <a href="/Home/Details/@product.ProductId">
+                                    <img src="images/p5.jpg" alt="" class="img-responsive" />
+                                </a>
+                                <h4>@product.ProductName</h4>
+                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">N @product.UnitPrice</span></a></p>
+                                <div class="pro-grd">
+                                    <a href="/Home/Details/@product.ProductId">Quick View</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+            @Html.Partial("_Sidebar")
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
